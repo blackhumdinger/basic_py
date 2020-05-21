@@ -1,0 +1,12 @@
+def tohex(dec):
+    x = (dec%16)
+    igits = "0123456789ABCDEF"
+    digits = list(igits)
+    rest = int(dec/16)
+    if (rest == 0):
+        return digits[x]
+    return tohex(rest) + digits[x]
+
+numbers = [0,16,32,48,46,2,55,887]
+hex_ = ["0x"+tohex(i) for i in numbers]
+print(hex_)
